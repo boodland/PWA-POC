@@ -259,15 +259,15 @@ body {
   background-repeat: no-repeat;
   background-size: contain; }
   .oposicion .icon.policia-nacional {
-    background-image: url("/images/policia-nacional.png"); }
+    background-image: url("https://boodland.github.io/PWA-POC/images/policia-nacional.png"); }
   .oposicion .icon.funcionario-prisiones {
-    background-image: url("/images/funcionario-prisiones.png"); }
+    background-image: url("https://boodland.github.io/PWA-POC/images/funcionario-prisiones.png"); }
   .oposicion .icon.magisterio {
-    background-image: url("/images/magisterio.png"); }
+    background-image: url("https://boodland.github.io/PWA-POC/images/magisterio.png"); }
   .oposicion .icon.justicia {
-    background-image: url("/images/justicia.png"); }
+    background-image: url("https://boodland.github.io/PWA-POC/images/justicia.png"); }
   .oposicion .icon.administrativo {
-    background-image: url("/images/administrativo.png"); }
+    background-image: url("https://boodland.github.io/PWA-POC/images/administrativo.png"); }
 
 
 @media (max-width: 450px) {
