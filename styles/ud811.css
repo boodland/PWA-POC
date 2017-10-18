@@ -93,9 +93,9 @@ body {
     outline: none;
     cursor: pointer; }
   .header #butRefresh {
-    background: url(images/ic_refresh_white_24px.svg) center center no-repeat; }
+    background: url(./images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
-    background: url(images/ic_add_white_24px.svg) center center no-repeat; }
+    background: url(./images/ic_add_white_24px.svg) center center no-repeat; }
 
 .header__title {
   font-weight: 400;
@@ -259,15 +259,15 @@ body {
   background-repeat: no-repeat;
   background-size: contain; }
   .oposicion .icon.policia-nacional {
-    background-image: url("images/policia-nacional.png"); }
+    background-image: url("./images/policia-nacional.png"); }
   .oposicion .icon.funcionario-prisiones {
-    background-image: url("images/funcionario-prisiones.png"); }
+    background-image: url("./images/funcionario-prisiones.png"); }
   .oposicion .icon.magisterio {
-    background-image: url("images/magisterio.png"); }
+    background-image: url("./images/magisterio.png"); }
   .oposicion .icon.justicia {
-    background-image: url("images/justicia.png"); }
+    background-image: url("./images/justicia.png"); }
   .oposicion .icon.administrativo {
-    background-image: url("images/administrativo.png"); }
+    background-image: url("./images/administrativo.png"); }
 
 
 @media (max-width: 450px) {
