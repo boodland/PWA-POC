@@ -17,40 +17,61 @@
   </header>
 
   <main class="main">
-    <div class="card cardTemplate weather-forecast" hidden>
-      <div class="location"></div>
-      <div class="current">
+    <div class="card cardTemplate oposicion" hidden>
+      <div class="title"></div>
+      <div class="oposicion-container">
         <div class="visual">
           <div class="icon"></div>
           <div class="plazas">
             <span class="value"></span><span class="scale"> PLAZAS</span>
           </div>
-        </div>    
+        </div> 
+        <div class="preparador">
+          <div class="icon"></div>
+          <div class="prep-name">           
+          </div>
+          <div class="location">
+          </div>
+        </div>  
+        <div class="preparador">
+          <div class="icon"></div>
+          <div class="prep-name">
+          </div>
+          <div class="location">
+          </div>
+        </div>
+        <div class="preparador">
+          <div class="icon"></div>
+          <div class="prep-name">
+          </div>
+          <div class="location">
+          </div>
+        </div> 
       </div>
     </div>
   </main>
 
   <div class="dialog-container">
     <div class="dialog">
-      <div class="dialog-title">Add new city</div>
+      <div class="dialog-title">Anade Oposicion</div>
       <div class="dialog-body">
-        <select id="selectCityToAdd">
-          <option value="austin">Austin, TX</option>
-          <option value="boston">Boston, MA</option>
-          <option value="chicago">Chicago, IL</option>
-          <option value="portland">Portland, OR</option>
-          <option value="sanfrancisco">San Francisco, CA</option>
-          <option value="seattle">Seattle, WA</option>
+        <select id="selectOposicionToAdd">
+          <option value="policia">Policia Nacional</option>
+          <option value="prisiones">Funcionario de Prisiones</option>
+          <option value="magisterio">Magisterio</option>
+          <option value="justicia">Justicia</option>
+          <option value="administrativo">Administrativo</option>
         </select>
       </div>
       <div class="dialog-buttons">
-        <button id="butAddCity" class="button">Add</button>
-        <button id="butAddCancel" class="button">Cancel</button>
+        <button id="butAddOposicion" class="button">Anadir</button>
+        <button id="butRemoveOposicion" class="button">Eliminar</button>
+        <button id="butAddCancel" class="button">Cancelar</button>
       </div>
     </div>
   </div>
 
-  <div class="loader">
+  <div class="loader" hidden>
     <svg viewBox="0 0 32 32" width="32" height="32">
       <circle id="ud811Spinner" cx="16" cy="16" r="14" fill="none"></circle>
     </svg>

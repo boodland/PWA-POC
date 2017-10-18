@@ -3,27 +3,24 @@
   'use strict';
 
 
-  var injectedOposiciones = {
-    oposiciones: [
+  var injectedOposiciones = [
       { key: 'policia', label: 'POLICIA NACIONAL', icon: 'policia-nacional', plazas: 934 },
       { key: 'prisiones', label: 'FUNCIONARIO DE PRISIONES', icon: 'funcionario-prisiones', plazas: 285 },
       { key: 'magisterio', label: 'MAGISTERIO', icon: 'magisterio', plazas: 426 }, 
       { key: 'justicia', label: 'CUERPO DE TRAMITACION PROCESAL Y ADMINISTRATIVA', icon: 'justicia', plazas: 426 },
       { key: 'administrativo', label: 'GENERAL ADMINISTRATIVO DE LA ADMINISTRACION DEL ESTADO', icon: 'administrativo', plazas: 1245 }
-    ]
-  };
+  ];
   
-  var weatherAPIUrlBase = 'https://publicdata-weather.firebaseio.com/';
+  var preparadoresAPIUrlBase = 'https://randomuser.me/api/?results=';
 
   var app = {
-    isLoading: true,
+    isLoading: false,
     visibleCards: {},
-    selectedCities: [],
+    selectedOposiciones: [],
     spinner: document.querySelector('.loader'),
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
-    addDialog: document.querySelector('.dialog-container'),
-    daysOfWeek: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+    addDialog: document.querySelector('.dialog-container')
   };
 
 
@@ -35,7 +32,7 @@
 
   /* Event listener for refresh button */
   document.getElementById('butRefresh').addEventListener('click', function() {
-    app.updateForecasts();
+    app.updateOposiciones();
   });
 
   /* Event listener for add new city button */
@@ -45,13 +42,29 @@
   });
 
   /* Event listener for add city button in add city dialog */
-  document.getElementById('butAddCity').addEventListener('click', function() {
-    var select = document.getElementById('selectCityToAdd');
+  document.getElementById('butAddOposicion').addEventListener('click', function() {
+    var select = document.getElementById('selectOposicionToAdd');
     var selected = select.options[select.selectedIndex];
     var key = selected.value;
-    var label = selected.textContent;
-    app.getForecast(key, label);
-    app.selectedCities.push({key: key, label: label});
+    app.getOposicion(key);
+    app.selectedOposiciones.push(key);
+    app.toggleAddDialog(false);
+  });
+
+   /* Event listener for remove city button in add city dialog */
+  document.getElementById('butRemoveOposicion').addEventListener('click', function() {
+    var select = document.getElementById('selectOposicionToAdd');
+    var selected = select.options[select.selectedIndex];
+    var key = selected.value;
+    var index = app.selectedOposiciones.indexOf(key);
+    if (index > -1) {
+      app.selectedOposiciones.splice(index, 1);
+    }
+    var card = app.visibleCards[key];
+    if (card) {
+      card.remove();
+      delete app.visibleCards[key];
+    }
     app.toggleAddDialog(false);
   });
 
@@ -78,19 +91,23 @@
 
   // Updates a weather card with the latest weather forecast. If the card
   // doesn't already exist, it's cloned from the template.
-  app.updateForecastCard = function (data) {
-    for (var i = 0; i < data.oposiciones.length; i++) {
-      var card = app.visibleCards[data.oposiciones[i].key];
-      if (!card) {
-        card = app.cardTemplate.cloneNode(true);
-        card.classList.remove('cardTemplate');
-        card.querySelector('.location').textContent = data.oposiciones[i].label;
-        card.removeAttribute('hidden');
-        app.container.appendChild(card);
-        app.visibleCards[data.oposiciones[i].key] = card;
-      }
-      card.querySelector('.current .icon').classList.add(data.oposiciones[i].icon);
-      card.querySelector('.current .plazas .value').textContent = data.oposiciones[i].plazas;
+  app.updateOposicionCard = function (data) {
+    var card = app.visibleCards[data.key];
+    if (!card) {
+      card = app.cardTemplate.cloneNode(true);
+      card.classList.remove('cardTemplate');
+      card.querySelector('.title').textContent = data.label;
+      card.removeAttribute('hidden');
+      app.container.appendChild(card);
+      app.visibleCards[data.key] = card;
+    }
+    card.querySelector('.oposicion-container .icon').classList.add(data.icon);
+    card.querySelector('.oposicion-container .plazas .value').textContent = data.plazas;
+    var preparadores = card.querySelectorAll('.preparador');
+    for (var i = 0; i < preparadores.length; i++){
+      preparadores[i].querySelector('.icon').style.backgroundImage = "url('" + data.preparadores[i].picture.medium + "')";
+      preparadores[i].querySelector('.prep-name').textContent = data.preparadores[i].name.first;
+      preparadores[i].querySelector('.location').textContent = data.preparadores[i].location.city;
     }
     
     if (app.isLoading) {
@@ -108,17 +125,17 @@
    ****************************************************************************/
 
   // Gets a forecast for a specific city and update the card with the data
-  app.getForecast = function(key, label) {
-    var url = weatherAPIUrlBase + key + '.json';
+  app.getOposicion = function (key) {
+    var oposicion = injectedOposiciones.find(opo=>opo.key === key);
+    var url = preparadoresAPIUrlBase + '3';
     // Make the XHR to get the data, then update the card
     var request = new XMLHttpRequest();
     request.onreadystatechange = function() {
       if (request.readyState === XMLHttpRequest.DONE) {
         if (request.status === 200) {
           var response = JSON.parse(request.response);
-          response.key = key;
-          response.label = label;
-          app.updateForecastCard(response);
+          oposicion.preparadores = response.results;
+          app.updateOposicionCard(oposicion);
         }
       }
     };
@@ -127,13 +144,11 @@
   };
 
   // Iterate all of the cards and attempt to get the latest forecast data
-  app.updateForecasts = function() {
+  app.updateOposiciones = function() {
     var keys = Object.keys(app.visibleCards);
     keys.forEach(function(key) {
-      app.getForecast(key);
+      app.getOposicion(key);
     });
   };
-
-  app.updateForecastCard(injectedOposiciones);
 
 })();

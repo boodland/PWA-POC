@@ -217,97 +217,73 @@ body {
   margin: 16px;
   box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12); }
 
-.weather-forecast .location {
+.oposicion .title {
   font-size: 1.75em; }
 
-.weather-forecast .date, .weather-forecast .description {
-  font-size: 1.25em; }
-
-.weather-forecast .current {
+.oposicion .oposicion-container {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex; }
-  .weather-forecast .current .icon {
+  .oposicion .oposicion-container .icon {
     width: 128px;
     height: 128px; }
-  .weather-forecast .current .visual {
+  .oposicion .oposicion-container .visual {
     display: -webkit-box;
     display: -webkit-flex;
     display: -ms-flexbox;
     display: flex;
     font-size: 4em; }
-    .weather-forecast .current .visual .scale {
+    .oposicion .oposicion-container .visual .scale {
       font-size: 0.5em;
       vertical-align: super; }
-  .weather-forecast .current .visual, .weather-forecast .current .description {
+  .oposicion .oposicion-container .visual {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1; }
-  .weather-forecast .current .feels-like:before {
-    content: "Feels like: ";
-    color: #888; }
-  .weather-forecast .current .wind:before {
-    content: "Wind: ";
-    color: #888; }
-  .weather-forecast .current .precip:before {
-    content: "Precipitation: ";
-    color: #888; }
-  .weather-forecast .current .humidity:before {
-    content: "Humidity: ";
-    color: #888; }
-  .weather-forecast .current .pollen:before {
-    content: "Pollen Count: ";
-    color: #888; }
-  .weather-forecast .current .pcount:before {
-    content: "Pollen ";
-    color: #888; }
 
-.weather-forecast .future {
-  display: -webkit-box;
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex; }
-  .weather-forecast .future .oneday {
+  .oposicion .oposicion-container .preparador {
     -webkit-box-flex: 1;
     -webkit-flex-grow: 1;
         -ms-flex-positive: 1;
             flex-grow: 1;
     text-align: center; }
-    .weather-forecast .future .oneday .icon {
+    .oposicion .oposicion-container .preparador .icon {
       width: 64px;
       height: 64px;
       margin-left: auto;
       margin-right: auto; }
-    .weather-forecast .future .oneday .temp-high, .weather-forecast .future .oneday .temp-low {
-      display: inline-block; }
-    .weather-forecast .future .oneday .temp-low {
-      color: #888; }
 
-.weather-forecast .icon {
+.oposicion .icon {
   background-repeat: no-repeat;
   background-size: contain; }
-  .weather-forecast .icon.policia-nacional {
+  .oposicion .icon.policia-nacional {
     background-image: url("/images/policia-nacional.png"); }
-  .weather-forecast .icon.funcionario-prisiones {
+  .oposicion .icon.funcionario-prisiones {
     background-image: url("/images/funcionario-prisiones.png"); }
-  .weather-forecast .icon.magisterio {
+  .oposicion .icon.magisterio {
     background-image: url("/images/magisterio.png"); }
-  .weather-forecast .icon.justicia {
+  .oposicion .icon.justicia {
     background-image: url("/images/justicia.png"); }
-  .weather-forecast .icon.administrativo {
+  .oposicion .icon.administrativo {
     background-image: url("/images/administrativo.png"); }
 
 
 @media (max-width: 450px) {
-  .weather-forecast .date, .weather-forecast .description {
+  .oposicion .title {
+    font-size: 1.25em; }
+  .oposicion .date, .oposicion .preparador {
     font-size: 0.9em; }
-  .weather-forecast .current .icon {
+  .oposicion .oposicion-container .icon {
     width: 96px;
     height: 96px; }
-  .weather-forecast .current .visual {
-    font-size: 3em; }
-  .weather-forecast .future .oneday .icon {
+  .oposicion .oposicion-container .visual {
+    font-size: 2em; }
+  .oposicion .oposicion-container .preparador .icon {
     width: 32px;
-    height: 32px; } }
+    height: 32px; } 
+    .oposicion .oposicion-container .preparador {
+      padding: 0 5px; 
+    }
+}
