@@ -7,7 +7,7 @@
       { key: 'policia', label: 'POLICIA NACIONAL', icon: 'policia-nacional', plazas: 934 },
       { key: 'prisiones', label: 'FUNCIONARIO DE PRISIONES', icon: 'funcionario-prisiones', plazas: 285 },
       { key: 'magisterio', label: 'MAGISTERIO', icon: 'magisterio', plazas: 426 }, 
-      { key: 'justicia', label: 'CUERPO DE TRAMITACION PROCESAL Y ADMINISTRATIVA', icon: 'justicia', plazas: 426 },
+      { key: 'justicia', label: 'CUERPO DE TRAMITACION PROCESAL Y ADMINISTRATIVA', icon: 'justicia', plazas: 729 },
       { key: 'administrativo', label: 'GENERAL ADMINISTRATIVO DE LA ADMINISTRACION DEL ESTADO', icon: 'administrativo', plazas: 1245 }
   ];
   
