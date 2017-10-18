@@ -16,7 +16,6 @@
   var app = {
     isLoading: false,
     visibleCards: {},
-    selectedOposiciones: [],
     spinner: document.querySelector('.loader'),
     cardTemplate: document.querySelector('.cardTemplate'),
     container: document.querySelector('.main'),
@@ -47,7 +46,6 @@
     var selected = select.options[select.selectedIndex];
     var key = selected.value;
     app.getOposicion(key);
-    app.selectedOposiciones.push(key);
     app.toggleAddDialog(false);
   });
 
@@ -56,21 +54,22 @@
     var select = document.getElementById('selectOposicionToAdd');
     var selected = select.options[select.selectedIndex];
     var key = selected.value;
-    var index = app.selectedOposiciones.indexOf(key);
-    if (index > -1) {
-      app.selectedOposiciones.splice(index, 1);
-    }
     var card = app.visibleCards[key];
     if (card) {
       card.remove();
       delete app.visibleCards[key];
     }
+    app.removeUnselectedOposicion(key);
     app.toggleAddDialog(false);
   });
 
   /* Event listener for cancel button in add city dialog */
   document.getElementById('butAddCancel').addEventListener('click', function() {
     app.toggleAddDialog(false);
+  });
+
+  document.addEventListener('DOMContentLoaded', function () {
+    app.loadSelectedOposiciones();
   });
 
 
@@ -135,6 +134,7 @@
         if (request.status === 200) {
           var response = JSON.parse(request.response);
           oposicion.preparadores = response.results;
+          app.saveSelectedOposicion(oposicion);
           app.updateOposicionCard(oposicion);
         }
       }
@@ -151,4 +151,18 @@
     });
   };
 
+  app.saveSelectedOposicion = function (oposicion) {
+    localforage.setItem(oposicion.key, oposicion);
+  };
+
+  app.removeUnselectedOposicion = function (key, order) {
+    localforage.removeItem(key);
+  }
+
+  app.loadSelectedOposiciones = function () {
+    localforage.iterate(function (value, key, iterationNumber) {
+      app.updateOposicionCard(value);
+    })
+  };
+  
 })();
