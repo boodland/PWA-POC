@@ -125,7 +125,13 @@
 
   // Gets a forecast for a specific city and update the card with the data
   app.getOposicion = function (key) {
-    var oposicion = injectedOposiciones.find(opo=>opo.key === key);
+    var oposicion;
+    var i = 0;
+    while (i < injectedOposiciones.length &&
+           injectedOposiciones[i].key === key) {
+      i++;
+    }
+    oposicion = injectedOposiciones[i];
     var url = preparadoresAPIUrlBase + '3';
     // Make the XHR to get the data, then update the card
     var request = new XMLHttpRequest();
@@ -157,12 +163,12 @@
 
   app.removeUnselectedOposicion = function (key, order) {
     localforage.removeItem(key);
-  }
+  };
 
   app.loadSelectedOposiciones = function () {
     localforage.iterate(function (value, key, iterationNumber) {
       app.updateOposicionCard(value);
-    })
+    });
   };
 
   if ('serviceWorker' in navigator) {
