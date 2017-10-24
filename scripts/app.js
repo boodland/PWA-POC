@@ -128,7 +128,7 @@
     var oposicion;
     var i = 0;
     while (i < injectedOposiciones.length &&
-           injectedOposiciones[i].key === key) {
+           injectedOposiciones[i].key !== key) {
       i++;
     }
     oposicion = injectedOposiciones[i];
