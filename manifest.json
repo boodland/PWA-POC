@@ -3,10 +3,10 @@
     "lang": "es",
     "name": "Oposiciones",
     "scope": "./",
-    "display": "fullscreen",
+    "display": "standalone",
     "start_url": "http://localhost:3000",
     "short_name": "Oposiciones",
-    "theme_color": "#3F51B5",
+    "theme_color": "#000000",
     "description": "Oposiciones App PWA",
     "orientation": "any",
     "background_color": "#FFFFFF",
@@ -215,23 +215,28 @@
         },
         {
           "src": "/images/icons/android/android-launchericon-192-192.png",
-          "sizes": "192x192"
+          "sizes": "192x192",
+          "density": 4.0
         },
         {
           "src": "/images/icons/android/android-launchericon-144-144.png",
-          "sizes": "144x144"
+          "sizes": "144x144",
+          "density": 3.0
         },
         {
           "src": "/images/icons/android/android-launchericon-96-96.png",
-          "sizes": "96x96"
+          "sizes": "96x96",
+          "density": 2.0
         },
         {
           "src": "/images/icons/android/android-launchericon-72-72.png",
-          "sizes": "72x72"
+          "sizes": "72x72",
+          "density": 1.5
         },
         {
           "src": "/images/icons/android/android-launchericon-48-48.png",
-          "sizes": "48x48"
+          "sizes": "48x48",
+          "density": 1.0
         },
         {
           "src": "/images/icons/ios/ios-appicon-1024-1024.png",
