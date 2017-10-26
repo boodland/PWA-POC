@@ -6,7 +6,7 @@
     "display": "standalone",
     "start_url": "http://localhost:3000",
     "short_name": "Oposiciones",
-    "theme_color": "#000000",
+    "theme_color": "#3F51B5",
     "description": "Oposiciones App PWA",
     "orientation": "any",
     "background_color": "#FFFFFF",
