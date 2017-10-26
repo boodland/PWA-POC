@@ -3,7 +3,7 @@
     "lang": "es",
     "name": "Oposiciones",
     "scope": "/PWA-POC/",
-    "display": "fullscreen",
+    "display": "standalone",
     "start_url": "https://boodland.github.io/PWA-POC/",
     "short_name": "Oposiciones",
     "theme_color": "#3F51B5",
