@@ -6,7 +6,7 @@
     "display": "standalone",
     "start_url": "https://boodland.github.io/PWA-POC/",
     "short_name": "Oposiciones",
-    "theme_color": "transparent",
+    "theme_color": "#000000",
     "description": "Oposiciones App PWA",
     "orientation": "any",
     "background_color": "#FFFFFF",
