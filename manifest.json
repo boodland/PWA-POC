@@ -216,27 +216,27 @@
         {
           "src": "/images/icons/android/android-launchericon-192-192.png",
           "sizes": "192x192",
-          "density": 4.0
+          "density": "4.0"
         },
         {
           "src": "/images/icons/android/android-launchericon-144-144.png",
           "sizes": "144x144",
-          "density": 3.0
+          "density": "3.0"
         },
         {
           "src": "/images/icons/android/android-launchericon-96-96.png",
           "sizes": "96x96",
-          "density": 2.0
+          "density": "2.0"
         },
         {
           "src": "/images/icons/android/android-launchericon-72-72.png",
           "sizes": "72x72",
-          "density": 1.5
+          "density": "1.5"
         },
         {
           "src": "/images/icons/android/android-launchericon-48-48.png",
           "sizes": "48x48",
-          "density": 1.0
+          "density": "1.0"
         },
         {
           "src": "https://boodland.github.io/PWA-POC/images/icons/ios/ios-appicon-1024-1024.png",
