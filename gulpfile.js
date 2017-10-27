@@ -28,6 +28,7 @@ gulp.task('generate-sw', function() {
       './styles/*.css'
     ],
     stripPrefix: '.',
+    replacePrefix: 'https://boodland.github.io/PWA-POC',
     runtimeCaching: [{
       urlPattern: /^https:\/\/randomuser\.me\/api\//,
       handler: 'networkFirst',
