@@ -8,6 +8,7 @@ html, body {
   width: 100%;
   font-family: 'Helvetica', 'Verdana', sans-serif;
   font-weight: 400;
+  font-display: optional;
   color: #444;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -78,9 +79,9 @@ body {
     outline: none;
     cursor: pointer; }
   .header #butRefresh {
-    background: url(/images/ic_refresh_white_24px.svg) center center no-repeat; }
+    background: url(https://boodland.github.io/PWA-POC/images/ic_refresh_white_24px.svg) center center no-repeat; }
   .header #butAdd {
-    background: url(/images/ic_add_white_24px.svg) center center no-repeat; }
+    background: url(https://boodland.github.io/PWA-POC/images/ic_add_white_24px.svg) center center no-repeat; }
 
 .header__title {
   font-weight: 400;
@@ -204,10 +205,7 @@ body {
 .oposicion .oposicion-container {
   display: -webkit-box;
   display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center; }
+  display: flex; }
   .oposicion .oposicion-container .icon {
     width: 128px;
     height: 128px; }
@@ -215,62 +213,49 @@ body {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    font-size: 4em;
-    text-align: center; }
-    .oposicion .oposicion-container .visual .scale {
-      font-size: 0.5em; }
-  .oposicion .oposicion-container .preparadores {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
     -webkit-box-flex: 1;
         -ms-flex-positive: 1;
-            flex-grow: 1; }
-    .oposicion .oposicion-container .preparadores .preparador {
-      -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-              flex-grow: 1;
-      text-align: center; }
-      .oposicion .oposicion-container .preparadores .preparador .icon {
-        width: 64px;
-        height: 64px;
-        margin-left: auto;
-        margin-right: auto; }
+            flex-grow: 1;
+    font-size: 4em; }
+    .oposicion .oposicion-container .visual .scale {
+      font-size: 0.5em;
+      vertical-align: super; }
+  .oposicion .oposicion-container .preparador {
+    -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+            flex-grow: 1;
+    text-align: center; }
+    .oposicion .oposicion-container .preparador .icon {
+      width: 64px;
+      height: 64px;
+      margin-left: auto;
+      margin-right: auto; }
 
 .oposicion .icon {
   background-repeat: no-repeat;
   background-size: contain; }
   .oposicion .icon.policia-nacional {
-    background-image: url(/images/policia-nacional.png); }
+    background-image: url(https://boodland.github.io/PWA-POC/images/policia-nacional.png); }
   .oposicion .icon.funcionario-prisiones {
-    background-image: url(/images/funcionario-prisiones.png); }
+    background-image: url(https://boodland.github.io/PWA-POC/images/funcionario-prisiones.png); }
   .oposicion .icon.magisterio {
-    background-image: url(/images/magisterio.png); }
+    background-image: url(https://boodland.github.io/PWA-POC/images/magisterio.png); }
   .oposicion .icon.justicia {
-    background-image: url(/images/justicia.png); }
+    background-image: url(https://boodland.github.io/PWA-POC/images/justicia.png); }
   .oposicion .icon.administrativo {
-    background-image: url(/images/administrativo.png); }
+    background-image: url(https://boodland.github.io/PWA-POC/images/administrativo.png); }
 
 @media (max-width: 450px) {
   .oposicion .title {
     font-size: 1.25em; }
-  .oposicion .oposicion-container {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    -webkit-box-align: normal;
-        -ms-flex-align: normal;
-            align-items: normal; }
-    .oposicion .oposicion-container .icon {
-      width: 96px;
-      height: 96px; }
-    .oposicion .oposicion-container .visual {
-      margin: 10px 0;
-      font-size: 3em; }
-    .oposicion .oposicion-container .preparador {
-      font-size: 0.9em;
-      padding: 0 5px; }
-      .oposicion .oposicion-container .preparador .icon {
-        width: 32px;
-        height: 32px; } }
+  .oposicion .oposicion-container .icon {
+    width: 96px;
+    height: 96px; }
+  .oposicion .oposicion-container .visual {
+    font-size: 2em; }
+  .oposicion .oposicion-container .preparador {
+    font-size: 0.9em;
+    padding: 0 5px; }
+    .oposicion .oposicion-container .preparador .icon {
+      width: 32px;
+      height: 32px; } }
