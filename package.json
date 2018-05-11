@@ -1,7 +1,7 @@
 {
   "name": "oposiciones-pwa-boodland",
   "description": "The first Progressive Web App",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "private": true,
   "license": "Apache2",
   "dependencies": {},
